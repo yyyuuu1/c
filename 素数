@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int i = 0;
+	int j = 0;
+	int count = 0;//统计有多少个素数
+	for (i = 100; i <= 200; i++)
+	{
+		//素数的判断条件只能被一和它本身整除
+		for (j = 2; j < i ; j++)
+		{
+			if (i % j == 0)
+			{
+				break;
+			}
+		}
+		if(j==i)
+		{
+			printf("%d ",i);
+			count++;
+		}
+	}
+	printf("count=%d\n",count);
+	return 0;
+}
