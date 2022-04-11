@@ -1,0 +1,20 @@
+//计算n的阶乘
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;
+//	int j = 0;
+//	int sum = 0;
+//	int ret = 1;
+//	scanf_s("%d", &j);
+//	for(n=1;n<=j;n++)
+//	{
+//		int ret = 1;
+//		for (i = 1; i <= n; i++)
+//		{
+//			ret = ret * i;
+//		}
+//		sum = sum + ret;
+//	}
+//	printf("阶乘=%d\n", sum);
+//	return 0;
