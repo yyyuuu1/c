@@ -1,0 +1,29 @@
+//交换两个变量不允许创建临时变量
+//第一种方法
+//void add(int a, int b)
+//{
+//	a = a + b;
+//	b = a - b;
+//	a = a - b;
+//	printf("a=%d\n", a);
+//	printf("b=%d\n", b);
+//}
+
+//第二种方法
+
+//void add(int a, int b)
+//{
+//	b = a ^ b;     //按位异或，相同为0相异为1
+//	a = a ^ b;
+//	b = a ^ b;
+//	printf("a=%d\n", a);
+//	printf("b=%d\n", b);
+//}
+//
+//int main()
+//{
+//	int a= 3;
+//	int b = 5;
+//	add(a,b);
+//	return 0;
+//}
