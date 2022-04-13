@@ -1,0 +1,19 @@
+void add(year)
+{
+	if (year % 4 == 0 && year % 400 != 0 || year / 400 == 0) 
+	{
+		printf("闰年是 %d\n", year);
+	}
+	else 
+	{
+		printf("不是闰年\n");
+	}
+}
+
+int main()
+{
+	int year = 0;
+	scanf("%d", &year);
+	add(year);
+	return 0;
+}
