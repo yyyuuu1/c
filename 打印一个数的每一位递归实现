@@ -1,0 +1,16 @@
+void print(int n)
+{         
+	if (n > 9)//当n大于9时说明这个数是两位数
+	{
+		print(n/10);//调用print函数除10
+	}
+		printf("%d ",n % 10);//通过不断的除10 模10 可以把数字拆开
+}
+
+int main()
+{
+	int a = 0;
+	scanf_s("%d", &a);
+	print(a);
+	return 0;
+}
