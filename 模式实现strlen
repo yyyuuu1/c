@@ -1,0 +1,42 @@
+int print(char* p)//第一种方法用函数来实现
+{
+	int count = 0;
+	while (*p != '\0')
+	{
+		count++;
+		p++;
+	}
+	return count;
+}
+
+int print(char* p)//第二种方法指针减指针
+{
+	char* str = p;
+	char* end = p;
+	while (*end != '\0')
+	{
+		end++;
+	}
+	return end - str;
+}
+
+int print(char* p)//用递归的方式实现
+{
+	if (*p != '\0')//p指向的是第一个元素所以进行判断当p指向的元素是不是等于斜杠0
+	{
+		return 1 + print(p + 1);//如果指向的第一个元素不是斜杠0是1+print（p+1）就是从第二个元素开始找，直到找到斜杠0结束
+	}
+	else
+	{
+		return 0;//如果第一个元素就是斜杠0那么字符串的长度就是0
+	}
+}
+
+int main()
+{
+	int len = 0;
+	char ch[] = "bit" ;
+	len=print(ch);
+	printf("字符串的长度是%d\n", len);
+	return 0;
+}
