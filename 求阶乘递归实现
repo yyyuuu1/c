@@ -1,0 +1,31 @@
+int print(n)//用函数的方式求阶乘
+{
+	int i = 0;
+	int ret = 1;
+	for (i = 1; i <= n; i++)
+	{
+		ret = ret * i;
+	}
+	return ret;
+}
+
+int print2(n)//用递归的方式实现
+{
+	if (n <= 1)//当n小于等于1时n的阶乘就是1
+	{
+		return 1;
+	}
+	else
+	{
+		return n * print2(n - 1);//反之当n大于1时n的阶乘等于n*(n-1)
+	}                            //数学公式
+}
+int main()
+{
+	int n = 0;
+	int a = 0;
+	scanf("%d", &n);
+	a=print2(n);
+	printf("阶乘是%d ", a);
+	return 0;
+}
