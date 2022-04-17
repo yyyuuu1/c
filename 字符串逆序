@@ -1,0 +1,48 @@
+ //字符串逆序
+ //用递归实现
+int my_string(char *ch)//求字符串的长度
+{
+	int count = 0;
+	while (*ch != 0)
+	{
+		count++;
+		ch++;
+	}
+	return count;
+}
+
+void print(char* ch)
+{
+	char tmp = ch[0];//创建一个临时变量存放字符串第一个元素
+	int len = my_string(ch);//获取字符串的长度
+	ch[0]=ch[len - 1];//第一步把斜杠0前的字母放到第一个元素的位置
+	ch[len - 1] = '\0';//把斜杠0前的位置方式斜杠0
+	if (my_string(ch + 1) >= 2)
+	{
+		print(ch + 1);//逆序中间的元素
+	}
+	ch[len - 1] = tmp;//最后把第一个元素放到最后一个元素的位置
+}
+
+void print(char* ch)
+{
+	int left = 0;
+	int right = my_string(ch)-1;
+
+	while (left < right)
+	{
+		int tmp = ch[left];
+		ch[left] = ch[right];
+		ch[right] = tmp;
+		left++;
+		right--;
+	}
+}
+int main()
+{
+	int len = 0;
+	char ch[] = { "abcdef" };
+	print(ch);
+	printf("%s\n", ch);
+	return  0;
+}
