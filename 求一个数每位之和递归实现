@@ -1,0 +1,19 @@
+int print(int num)
+{
+	if (num > 9)
+	{
+		return print(num / 10) + num % 10;
+	}
+	else
+	{
+		return num;
+	}
+}
+int main()
+{
+	unsigned int num = 0;
+	int ret = 0;
+	scanf_s("%d", &num);
+	ret=print(num);
+	printf("ret=%d\n", ret);
+}
