@@ -1,0 +1,36 @@
+//用递归和非递归的方式实现
+//int fib(int n)//递归的方式实现
+//{
+//	if (n <= 2)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return fib(n - 1) + fib(n - 2);
+//	}
+//}
+
+//int fib(int n)//用循环的方式实现
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	while (n>2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c ;
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf_s("%d", & n);
+//	int ret = fib(n);;
+//	printf("ret=%d\n", ret);
+//	return 0;
+//}
