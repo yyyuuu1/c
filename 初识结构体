@@ -1,0 +1,32 @@
+//结构体
+//描述一个人    姓名 年龄，电话，名字
+//struct stu 
+//{
+//	char arr[10];
+//	int age;
+//	char app[20];
+//	char name  [10];
+//};
+//
+////void print(struct stu s)
+////{
+////	printf("%s\n", s.arr);
+////	printf("%d\n", s.age);
+////	printf("%s\n", s.app);
+////	printf("%s\n", s.name);
+////}
+//
+//void print2(struct stu *p)//用指针的方法，这种方法要比第一种好,因为不用在内存中开辟空间
+//{                                                   //因为形参是实参的一份临时拷贝
+//	printf("%d\n", p->age);
+//	printf("%s\n", p->app);
+//	printf("%s\n", p->arr);
+//	printf("%s\n", p->name);
+//}
+//int main()
+//{
+//	struct stu s = { "张三",10,"123546789","张三" };
+//	//print1(s);
+//	print2(&s);
+//	return 0;
+//}
