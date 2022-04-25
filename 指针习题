@@ -1,0 +1,28 @@
+int main()
+{
+	int a[5] = { 1,2,3,4,5 };
+	int* ptr = (int*)(&a + 1);
+	printf("%d,%d\n", *(a + 1), *(ptr - 1));
+	return 0;
+}
+
+
+struct text 
+{
+	int num;
+	char* pcname;
+	short sdate;
+	char cha[2];
+	short sba[4];
+}*p;
+//假设地址为0x100000,如下表达式的值分别是为多少
+//已知结构体test类型的变量大小为20个字节
+int main()
+{
+	p = (struct test*)0x100000;
+	printf("%p\n", p + 0x1);//0x1就是数字一p是一个结构体类型的指针+1跳过20个字节上面题目说明了test类型的大小为20个字节
+	printf("%p\n", (unsigned long)p + 0x1);//把p强制类型转换成了无符号的长整型整形加1就是普通的加一
+	//100000装换成10进制是10485767    加一后变成了10485768   在转换为16进制就变成了0x100001
+	printf("%p\n", (unsigned int*)p + 0x1);//把p强制类型转换成了int*类型的指针，一个整形指针的大小为四个字节所有加1加的是4个字节
+	return 0;
+}
