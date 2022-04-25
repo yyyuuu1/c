@@ -1,0 +1,19 @@
+//喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水，给20元，可以多少汽水(编程实现)。
+int main()
+{
+	int empty = 0;//空瓶数
+	int money = 0;//钱
+	int total = 0;//计数器
+	scanf_s("%d", &money);
+	//买回来的汽水
+	total = money;
+	empty = money;
+	//换回来的汽水
+	while (empty>=2)
+	{
+		total += empty / 2;//empty/除二就是换回来的汽水
+		empty = empty / 2 + empty % 2;//empty / 2是换回来的空瓶    empty % 2是剩下的空瓶  然后在重新赋给empty
+	}
+	printf("%d ", total);
+	return 0;
+}
