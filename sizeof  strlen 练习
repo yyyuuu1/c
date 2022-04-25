@@ -1,0 +1,99 @@
+int  main()
+{
+	//数组名是首元素的地址
+	// sizeof（数组名）表示整个数组
+	// &数组名表示整个数组
+	//除了这两种情况其他表示的都是首元素的地址
+	// 
+	//一维数组
+	//int a[] = { 1,2,3,4 };
+	//printf("%d\n", sizeof(a));//   16 sizeof(数组名)计算的是数组的地址单位是字节
+	//printf("%d\n", sizeof(a+0));// 4或者8个字节  数组名这里表示首元素的值，a+0还是首元素的地址，地址的大小是4个或者8个字节   
+	//printf("%d\n", sizeof(*a));//   4/8  数组名就是首元素的地址，（*a）就是首元素sizeof（*a）计算的就是首元素的地址
+	//printf("%d\n", sizeof(a+1));// 4/8   数组名这里表示首元素的值，a+1是第二个元素的地址，地址的大小是4个或者8个字节
+	//printf("%d\n", sizeof(a[1]));//  4/8   计算第二个元素的大小
+	//printf("%d\n", sizeof(&a));//   4/8    &a取出的是数组的地址，地址也是地址  地址的大小就是4个字节或者8个字节
+	//printf("%d\n", sizeof(*&a));//   16  取地址a是数组的地址，数组的地址解引用访问的是数组的，sizeof计算的是数组的大小，单位是字节
+	//printf("%d\n", sizeof(&a+1));//  4   取地址a取出的是数组的地址，+1跳过整个数组，但还是地址，所有是4或8个字节
+	//printf("%d\n", sizeof(&a[0]));//    4   第一个元素的地址
+	//printf("%d\n", sizeof(&a[0]+1));//  4  第二个元素的地址
+
+
+
+
+	//字符数组
+	//char arr[] = { 'a','b','c','d','e','f' };
+	//printf("%d\n", sizeof(arr));// 6  sizeof计算的是数组的大小因为是char类型的数组所有大小是6个字节
+	//printf("%d\n", sizeof(arr+0));//4/8  arr是首数组的地址 arr+0还是首元素的地址地址的大小是4/8个字节
+	//printf("%d\n", sizeof(*arr));// 1    arr是首元素地址*arr就是首元素大小是一个字节
+	//printf("%d\n", sizeof(arr[1]));// 1    计算的是第二个元素的大小
+	//printf("%d\n", sizeof(&arr));//  4/8    &arr取出的是数组的地址 所有大小还是4/8个字节
+	//printf("%d\n", sizeof(&arr+1));// 4/8    &arr取出的是数组的地址+1后跳过一个数组后还是地址，还是4/8个字节
+	//printf("%d\n", sizeof(&arr[0]+1));// 4/8  &arr[0]是首元素的地址+1后是第二个元素的地址，还是4/8个字节
+
+
+
+	//char arr[] = { 'a','b','c','d','e','f' };
+	//printf("%d\n", strlen(arr));// 随机值
+	//printf("%d\n", strlen(arr + 0));//  随机值
+	////printf("%d\n", strlen(*arr));//  err 错误  *arr取出的是首元素就是把97当成参数传给strlen   strlen需要的是地址
+	////printf("%d\n", strlen(arr[1]));//  err 错误   
+	//printf("%d\n", strlen(&arr));//   随机值  &
+	//printf("%d\n", strlen(&arr + 1));// 随机值相差6   &arr取出的是数组的地址+1跳过的是一个数组 从数组的最后一个元素开始寻找，
+	//printf("%d\n", strlen(&arr[0] + 1));// 随机值相差1   &arr[0]取出的是数组首元素的地址+1跳过一个元素，从第二个元素开始向后找，
+
+
+
+	//char arr[] = "abcdef";
+	//printf("%d\n", strlen(arr));// 6
+	//printf("%d\n", strlen(arr + 0));// 6  arr是首元素地址arr+0还是首元素地址
+	////printf("%d\n", strlen(*arr));//  err  arr是首元素地址，解引用取到的是字符a
+	////printf("%d\n", strlen(arr[1]));//  err  
+	//printf("%d\n", strlen(&arr));//   6
+	//printf("%d\n", strlen(&arr + 1));//  随机值   &arr取出的是数组的地址+1跳过的是一个数组，
+	//printf("%d\n", strlen(&arr[0] + 1));//  5   &arr[0]取出的是第一个元素的地址+1后，就是第二个元素的地址，从第二个元素开始找
+
+
+
+	//char *p[] = "abcdef";
+	//printf("%d\n", sizeof(p));// 6  计算的是指针变量p的大小
+	//printf("%d\n", sizeof(p+1));// 4/8  p+1等到的是字符b的地址
+	//printf("%d\n", sizeof(*p));// 1  就是字符串中第一个元素a
+	//printf("%d\n", sizeof(p[0]));//  1   计算的是第一个元素的地址
+	//printf("%d\n", sizeof(&p));//  4/8   &p取出的是地址，既然是地址就是4或者8字节
+	//printf("%d\n", sizeof(&p+1));// 4/8    地址
+	//printf("%d\n", sizeof(&p[0]+1));// 4/8  地址
+
+
+
+	//char *p[] = "abcdef";
+	//printf("%d\n", strlen(p));// 6  
+	//printf("%d\n", strlen(p+1));//  5
+	////printf("%d\n", strlen(*p));// err  *p拿到的是字符a把字符a给strlen把字符a当成了地址向后找
+	////printf("%d\n", strlen(p[0]));// err  
+	//printf("%d\n", strlen(&p));//  随机值 &p取出的是地址
+	//printf("%d\n", strlen(&p+1));// 随机值  
+	//printf("%d\n", strlen(&p[0]+1));//  5
+
+
+
+
+	//二维数组
+	//int a[3][4] = { 0 };
+	//printf("%d\n", sizeof(a));// 48  计算二维数组的大小 
+	//printf("%d\n", sizeof(a[0][0]));//  4  计算第一行第一列这个元素的大小
+	//printf("%d\n", sizeof(a[0]));//  16   a[0]相当于第一行作为一维数组的数组名 
+	////sizeof(a[0])把数组名单独放在sizeof内计算的是第一行元素的大小
+	//printf("%d\n", sizeof(a[0]+1));// 4   a[0]是第一行的数组名，数组名是首元素地址  a[0]+1计算第一行第二个元的的地址大小是4或8个字节
+	//printf("%d\n", sizeof(*(a[0] + 1)));// 4    *(a[0] + 1)计算第一行第二个元素大小是4个字节
+	//printf("%d\n", sizeof(a+1));//  4    a是二维数组的数组名，没有sizeof(a)也没有取地址a,所以a是首元素地址
+	////把二维数组看成一维数组是，第一行就是二维数组的第一行，所有a+1指的是第二行元素的地址
+	//printf("%d\n", sizeof(*(a + 1)));//  16  对第二行的地址解引用地址大小是16个字节   就是计算第二行的大小
+	//printf("%d\n", sizeof(&a[0]+1));// 4  
+	//printf("%d\n", sizeof(*(&a[0] + 1)));//   16
+	//printf("%d\n", sizeof(*a));// 16 a是首元素第一行的地址*aj就是第一行sizeof(*a)就是计算第一行的大小
+	//printf("%d\n", sizeof(a[3]));// 16
+	
+
+	return 0;
+}
