@@ -1,0 +1,47 @@
+//模拟实现strstr
+char* my_strstr(const char* p1, const char* p2)//增加const是因为我们只需要查找不对内容进行修改
+{
+	assert(p1 != NULL);//判断指针的有效性
+	assert(p2 != NULL);
+	char* s1 = NULL;
+	char* s2 = NULL;
+	char* cur = (char*)p1;
+	if (*p2 == '\0')//如果p2的字符串为\空那么直接返回
+	{
+		return (char*)p1;
+	}
+	while (*cur)
+	{
+		s1 = cur;//如果第一次尝寻找失败那么从第一次的下一个字符开始重新找
+		s2 = (char*)p2;//都是记住指针开始加1 后的位置
+		               //不强制类型转换成可能造成类型丢失
+		while (*s1 && *s2 && (*s1 == *s2))//s1  和s2都不等于\0并且  s1和s2 都相等进入循环
+		{
+			s1++;
+			s2++;
+		}
+		if (*s2 == '\0')//如果*s2等于\0那么就是在p1中找完了
+		{
+			return cur;
+		}
+		cur++;
+	}
+	//找不到的情况
+	return NULL;
+}
+
+int main()
+{
+	char* arr1 = { "abbbcd" };
+	char* arr2 = { "bbc" };
+	char* ret = my_strstr(arr1, arr2);//strstr函数的返回参数有两种一种是NULL这是找不到的情况
+	if (ret == NULL)                  //如果找到了就返回被找到的那个字符的首元素地址
+	{
+		printf("找不到\n");
+	}
+	else
+	{
+		printf("%s\n", ret);
+	}
+	return 0;
+}
