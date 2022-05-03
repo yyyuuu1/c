@@ -1,0 +1,20 @@
+//int main()
+//{
+//	//tolower 小写转小写
+//	//toupper 大写转小写
+//	/*char ch = tolower('p');
+//	putchar(ch);*/
+//
+//	char arr[] = "I AM A student";
+//	int i = 0;
+//	while (arr[i])//如果不是\0进入循环
+//	{
+//		if (isupper(arr[i]))//判断是不是大写字母
+//		{
+//			arr[i]=tolower(arr[i]);//如果是大写字母就转成小写字母放到arr中
+//		}
+//		i++;
+//	}
+//	printf("%s\n", arr[i]);
+//	return 0;
+//}
