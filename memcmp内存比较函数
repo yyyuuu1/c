@@ -1,0 +1,13 @@
+//memcmp内存比较函数
+//该函数有三个参数
+//int memcmp(const void* str1, const void* str2, size_t n)
+//返回类型和strcmp一样返回大于0小于0等于0三种情况
+//int main()
+//{
+//	int arr1[] = { 1,2,3,4,5 };
+//	int arr2[] = { 1,2,3,4,5 };
+//	int ret=memcmp(arr1, arr2, 8);//比较的大小单位是字节
+//	printf("%d ", ret);
+//	return 0;
+//
+//}
