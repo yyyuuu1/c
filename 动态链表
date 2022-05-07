@@ -1,0 +1,63 @@
+struct Node
+{
+	int date;
+	struct Node* next;
+};
+
+//创建链表
+struct Node* createlist()
+{
+	struct Node* headNode = (struct Node*)malloc(sizeof(struct Node));
+	//head就变成了结构体变量
+	//变量使用前要初始化
+	//headNode->date=1;//一般不初始化成1
+	headNode->next = NULL;
+	return headNode;
+}
+
+
+创建节点
+和我们创建链表相比多了一个数据域其他的创建链表都差不多
+struct Node* createnode(int date)
+{
+	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+	newnode->date=date ;
+	newnode->next = NULL;
+	return newnode;
+}
+
+//打印链表
+void printlist(struct Node* headnod)
+{
+	//从第二个节点开始打印
+	struct Node* move = headnod->next;
+	while (move != NULL)
+	{
+
+		printf("%d ", move->date);
+		move = move->next;
+	}
+	printf("\n");
+}
+
+//插入结点
+void insertnode(struct Node* headnod, int date)
+{
+	//1.创建插入节点(因为我们已经写好了一个创建节点的函数直接调用就可以了)
+	struct Node* newnod = createnode(date);
+	newnod->next = headnod->next;
+	headnod->next = newnod;
+	
+}
+
+
+int main()
+{
+	struct Node* list = createlist();
+	insertnode(list, 1);
+	insertnode(list, 2);
+	insertnode(list, 3);
+	printlist(list);
+	
+	return 0;
+}
