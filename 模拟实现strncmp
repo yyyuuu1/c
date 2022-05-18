@@ -1,0 +1,27 @@
+int my_strncmp(const char* dest, const char* src,int n)
+{
+	assert(dest && src);
+	while (n--)
+	{
+		while (*dest == *src)
+		{
+			if (*dest == '\0')
+			{
+				return 0;
+			}
+			dest++;
+			src++;
+		}
+	}
+	return *dest - *src;//因为strcmp函数的返回值有三个>0 <0 =0
+}
+
+int main()
+{
+	char arr1[] = { "abcdef" };
+	char arr2[] = { "abcdef" };
+	int ret = my_strncmp(arr1, arr2,4);
+	printf("%d ", ret);
+	system("pause");
+	return 0;
+}
