@@ -1,0 +1,14 @@
+int main()
+{
+	FILE* pf = fopen("test.txt", "w");
+	if (pf == NULL)//文件可能打开失败 所有进行判断
+	{
+		return 0;
+	}
+	fputc('a', pf);
+	fputc('a', pf);
+	fputc('a', pf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
