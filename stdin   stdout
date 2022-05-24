@@ -1,0 +1,7 @@
+int main()
+{
+	char buf[1024] = { 0 };
+	fgets(buf, 1024, stdin);//从标注输入流输入
+	fputs(buf, stdout);//从标准输出流输出
+	return 0;
+}
