@@ -1,0 +1,19 @@
+int main()
+{
+	unsigned int puc[4];
+	struct tagPIM
+	{
+		unsigned int ucPim1;
+		unsigned int ucDate0 : 1;
+		unsigned int ucDate1: 2;
+		unsigned int ucDate2 : 3;
+	} *pstPimDate;
+	pstPimDate = (struct tagPim*)puc;
+	memset(puc, 0, 4);
+	pstPimDate->ucPim1 = 2;
+	pstPimDate->ucDate0 = 3;
+	pstPimDate->ucDate2 = 4;
+	pstPimDate->ucDate2 = 5;
+	printf("%0.2x %0.2x %0.2x %0.2x", puc[0], puc[1], puc[2], puc[3]);
+	return 0;
+}
