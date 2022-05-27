@@ -1,0 +1,10 @@
+int main()
+{
+	union Un//共同体两者共用一块空间
+	{
+		short s[7];
+		int n;
+	};
+	printf("%d/n", sizeof(union Un));
+	return 0;
+}
